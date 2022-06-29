@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+    </script>
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/css/chart.css">
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <h1 class="text-center mb-5 pt-2" style="color:#fff;">MONEER</h1>
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column justify-content-center">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-home">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                </svg> Dashboard <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-file">
+                                    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+                                    <polyline points="13 2 13 9 20 9"></polyline>
+                                </svg>
+                                Account
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-bar-chart-2">
+                                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                                </svg>
+                                Stats
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-users">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                                Support
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-layers">
+                                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                                    <polyline points="2 17 12 22 22 17"></polyline>
+                                    <polyline points="2 12 12 17 22 12"></polyline>
+                                </svg>
+                                Integration
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+                <div class="chartjs-size-monitor"
+                    style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+                    <div class="chartjs-size-monitor-expand"
+                        style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                        <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div>
+                    </div>
+                    <div class="chartjs-size-monitor-shrink"
+                        style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                        <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
+                    </div>
+                </div>
+                <div
+                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Welcome Julian..</h1>
+                    <button class="btn btn-md btn-outline-secondary"><i class="fa-solid fa-bell"></i></button>
+                    <div class="btn-group mr-2">
+                        <input class="btn btn-md border-dark btn-outline-light" type="search" placeholder="Search"
+                            aria-label="Search">
+                        <button class="btn btn-md btn-outline-secondary"><i
+                                class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                </div>
+
+                <!-- Balance Section Start -->
+                <div class="row d-flex flex-row w-100 balance-row">
+                    <div class="col-md-8 d-flex flex-column justify-content-md-start align-item-end">
+                        <div class="BalanceDetails border rounded pt-4 w-100 ps-5">
+                            <h3>Balance</h3>
+                            <h2>$ 7893.66</h2>
+                            <p>Your account number is 4546-7989-4934</p>
+                        </div>
+                        <!-- Balance Section End -->
+
+                        <!-- Chart Section start -->
+                        <div class="row d-flex flex-row justify-content-md-between" style="box-sizing:border-box;">
+                            <div class="col-md-5 m-3 border rounded clearfix">
+                                <div class="p-3 d-flex flex-row justify-content-between">
+                                    <h3 style="font-weight:bold ;">Analytics</h3>
+                                    <button class="btn btn-sm btn-outline-secondary dropdown-toggle">Last week</button>
+                                </div>
+                                <div class="d-block p-2">
+                                    <canvas id="myChart" style="width:100%;max-width:700px;height: 200px;"></canvas>
+                                </div>
+                            </div>
+                            <div class="col-md-5 m-3 border rounded">
+                                <div class="p-3 d-flex flex-row justify-content-between">
+                                    <h3 style="font-weight:bold ;">+30,000</h3>
+                                    <button class="btn btn-sm btn-outline-secondary dropdown-toggle">Last week</button>
+                                </div>
+                                <div class="d-block p-2">
+                                    <canvas id="myChart1" style="width:100%;max-width:600px;height: 200px;"></canvas>
+                                </div>
+                            </div>
+
+                            <div class="col-md-5 m-3 border rounded clearfix">
+                                <div class="p-3 d-flex flex-column justify-content-between align-content-center">
+                                    <h5 style="font-weight:bold ;" class="text-center">Safely Withdraw Your money
+                                        anywhere</h5>
+                                    <button class="p-2 mt-4 rounded"
+                                        style="border:1px solid rgb(183, 126, 244); color:rgb(141, 142, 247);font-weight: bold;">Withdraw
+                                        Money</button>
+                                    <div class="mt-3">
+                                        <p class="text-sm-center w-100">Lorem ipsum dolor sit amet consectetur
+                                            adipisicing elit. Sit eligendi doloribus itaque dolore dolorum velit ut
+                                            aspernatur! Impedit ab sit similique ?</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-5 m-3 border rounded">
+                                <div class="p-3 d-flex flex-row justify-content-between">
+                                    <h3 style="font-weight:bold ;">Stats</h3>
+                                    <button class="btn btn-sm btn-outline-secondary dropdown-toggle">Last week</button>
+                                </div>
+                                <div class="d-block p-2">
+                                    <canvas id="myChart2" style="width:100%;max-width:600px;height: 200px;"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Chart Section End -->
+
+
+                    <!-- Card Section start -->
+                    <div class="col-sm-4 border card d-flex flex-column justify-content-md-end align-items-center h-100">
+                        <h3 class="pt-3 font-weight-bold">My Profile</h3>
+                        <img src="assets/images/pexels-christina-morillo-1181519.jpg" alt="" class="card-img-top w-50">
+                        <div class="card-body text-center w-100">
+                            <span style="font-weight:bold;font-size: 20px;">Julian</span><br>
+                            <span><i class="fa-solid fa-user-check"></i> Software Developer</span>
+                            <div class="d-flex flex-row p-2 justify-content-md-evenly profile-btn">
+                                <button class="p-2 rounded edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                                <button class="w-75 rounded full-Profile">View
+                                    Full Profile</button>
+                            </div>
+                            <div>
+                                <hr>
+                            </div>
+                            <div>
+                                <h4>Your Last Transcation</h4>
+                            </div>
+                            <div class="d-flex flex-row p-2 justify-content-md-evenly card-content">
+                                <div>
+                                    <p>Bank Transfer <br><a href="#">View Details</a></p>
+                                    <p>Mobile Banking <br><a href="#">View Details</a>
+                                    </p>
+                                    <p>E-Payment<br><a href="#">View Details</a></p>
+
+                                </div>
+                                <div>
+                                    <p>Bank Balance <br><a href="#">View Details</a></p>
+                                    <p>Mobile Balance <br><a href="#">View Details</a>
+                                    </p>
+                                    <p>E-Balance<br><a href="#">View Details</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <i class="fa-brands fa-facebook-square fa-2x"></i>
+                            <i class="fa-brands fa-whatsapp-square fa-2x"></i>
+                            <i class="fa-brands fa-facebook-square fa-2x"></i>
+                            <p>Share With Your Friends</p>
+                            
+
+                        </div>
+                    </div>
+                </div>
+                <!-- card Section End -->
+            </main>
+        </div>
+
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+        </script>
+        <script>
+            var xValues = ["Mon", "Tues", "Wed", "Thu", "Fri", "Sat", "Sun"];
+            var yValues = [24, 49, 44, 14, 23, 20, 40];
+            var barColors = ["red", "green", "blue", "orange", "brown", "yellow", "black"];
+            Chart.defaults.scale.gridLines.drawOnChartArea = false;
+
+
+            new Chart("myChart", {
+                type: "bar",
+                data: {
+                    labels: xValues,
+                    datasets: [{
+                        backgroundColor: barColors,
+                        data: yValues
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        yAxes: [{
+                            gridLines: {
+                                display: false
+                            },
+                            ticks: {
+                                display: false,
+                            }
+                        }],
+                        xAxes: [{
+                            gridLines: {
+                                display: false
+                            }
+                        }],
+                    },
+                    legend: {
+                        display: false
+                    },
+                    title: {
+                        display: true,
+                        text: "Profile Visit"
+                    }
+                }
+            });
+
+            var xValues = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000];
+            let labels = ["Mon", "Tues", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
+            Chart.defaults.scale.gridLines.drawOnChartArea = false;
+
+            new Chart("myChart1", {
+                type: "line",
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: [860, 1140, 1060, 1060, 1070, 1110, 1330, 2210, 7830, 2478],
+                        borderColor: "rgb(183, 126, 244)",
+                        fill: false
+                    }, {
+                        data: [1600, 1700, 1700, 1900, 2000, 2700, 4000, 5000, 6000, 7000],
+                        borderColor: "rgb(141, 142, 247)",
+                        fill: false
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        yAxes: [{
+                            gridLines: {
+                                display: false
+                            },
+                            ticks: {
+                                display: false,
+                            }
+                        }],
+                        xAxes: [{
+                            gridLines: {
+                                display: false
+                            }
+                        }],
+                    },
+                    legend: {
+                        display: false
+                    }
+                },
+
+            });
+
+
+            var xValues = ["Debited", "Credited"];
+            var yValues = [24, 76];
+            var barColors = [
+                "#00aba9",
+                "#2b5797",
+
+            ];
+            let label=["24%","76%"]
+
+            new Chart("myChart2", {
+                type: "doughnut",
+                data: {
+                    responsive: true,
+                    labels: label,
+                    datasets: [{
+                        backgroundColor: barColors,
+                        data: yValues
+                    }]
+                },
+                options: {
+                    legend: {
+                        position: 'left',
+                        display: true,
+                        align: 'center',
+                    },
+                    title: {
+                        display: true,
+                        text: "Withdrawal Percentage",
+                      
+
+                    }
+                }
+            });
+        </script>
+
+
+</body>
+
+</html>

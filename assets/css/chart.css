@@ -1,0 +1,232 @@
+* {
+    box-sizing: border-box;
+    padding: 0%;
+    margin: 0%;
+}
+
+.col-md-2 {
+    background: linear-gradient(to bottom, rgb(183, 126, 244), rgb(141, 142, 247), rgb(183, 126, 244));
+    line-height: 50px;
+}
+
+.nav-link {
+    color: #fff;
+}
+
+
+.BalanceDetails {
+    background: linear-gradient(to right, rgb(141, 142, 247), rgb(183, 126, 244));
+}
+
+.BalanceDetails>h3,
+h2 {
+    line-height: 50px;
+    color: #fff;
+}
+
+.nav {
+    margin-top: 50px;
+    position: relative;
+}
+
+.sidebar>h1 {
+    margin-top: 105px;
+}
+
+.full-Profile{
+    border:1px solid rgb(183, 126, 244);
+    color:rgb(141, 142, 247);
+    font-weight: bold;
+}
+.edit{
+    border:1px solid rgb(183, 126, 244);
+    color:rgb(141, 142, 247);
+    font-weight: bold;
+}
+
+/* Trail */
+
+.nav-link {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, .05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .2);
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+    border-radius: 30px;
+    color: #fff;
+    z-index: 1;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-decoration: none;
+    overflow: hidden;
+    text-transform: uppercase;
+    transition: all .3s ease-in-out;
+    backdrop-filter: blur(15px);
+    margin-bottom: 30px;
+
+}
+svg{
+
+    margin-right: 5px;
+
+}
+.card-content>div>p{
+    margin-bottom: 50px;
+    
+}
+
+.card-content>div>p>a{
+    color: rgb(141, 142, 247);
+    text-decoration: none;
+}
+.card-footer{
+    text-align: center;
+    width: 100%;
+    word-spacing: 30px;
+    margin-top: 43px;
+}
+.card-footer>p{
+    word-spacing: 0px;
+}
+.fa-facebook-square:hover,.fa-whatsapp-square:hover,.fa-facebook-square:hover{
+    transform: scale(1.1);
+}
+
+.nav-link:hover {
+    letter-spacing: 3px;
+    font-weight: bold;
+    color: #000;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background:
+        linear-gradient(to left, rgba(255, 255, 255, .15), transparent);
+    transform: skewX(40deg) translateX(0);
+    transition: all .5s ease-out;
+}
+
+.nav-item:hover .nav-link::before {
+    transform: skewX(40deg) translateX(200%);
+}
+
+.nav-item::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    margin-top: -5px;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 10px;
+    border-radius: 10px;
+    background: #f00;
+    transition: all .4s ease-in-out;
+    transition-delay: 0s;
+}
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    margin-top: -35px;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 10px;
+    border-radius: 10px;
+    background: #f00;
+    transition: all .4s ease-in-out;
+    transition-delay: 0s;
+}
+
+.nav-item:hover::before {
+    margin-top: 5px;
+    height: 10%;
+    width: 80%;
+    border-radius: 30px;
+    transition-delay: .3s;
+}
+.nav-item:hover::after {
+    margin-top: -85px !important;
+    height: 10%;
+    width: 80%;
+    border-radius: 30px;
+    transition-delay: .3s;
+}
+
+@media (min-width:480px) and (max-width:786px){
+.card{
+    display: block;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    align-content: center;
+    margin-left: 15px;
+}
+.card-body{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+.card-content{
+    display: flex !important; 
+   justify-content: space-evenly;
+   flex-direction: row;
+   width: 100%;
+}
+.card-content>div>p{
+  font-size: 20px;
+}
+h4{
+    font-size: 30px;
+}
+.profile-btn{
+    width: 100%;
+}
+.full-Profile{
+   width: 100%;
+   margin-left: 30px;
+}
+
+}
+@media (min-width:768px) and (max-width:1020px){
+    .chart-row{
+        display: flex;
+        flex-direction: column;
+
+    }
+.col-md-5{
+    width: 100%;
+}
+.col-sm-4{
+    width: 67%;
+    margin-left: 32px;
+}
+.balance-row{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+}
+.BalanceDetails{
+    width: 100%;
+    text-align: center;
+    padding: 0px !important;
+}
+.col-md-2{
+    width: 25%;
+}
+
+}
